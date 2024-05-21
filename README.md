@@ -34,14 +34,13 @@ not mentioned clearly what meant by improve, but I always prefer using streams f
  static void printRandomGreetingMessage() {
         List<String> messageStore = Arrays.asList("Hi, welcome", null, "Good day ");
         Collections.shuffle(messageStore);
-        String message = messageStore.stream()
-            .filter(Objects::nonNull)
+        messageStore.stream()
+            .map(val -> Objects.nonNull(val) ? val.trim() : createResponseForEmptyMessage())
             .findAny()
-            .map(String::trim)
-            .orElse(createResponseForEmptyMessage());
-        System.out.println(message);
+            .ifPresent(System.out::println);
     }
-private String createResponseForEmptyMessage() { return "the message was empty"; }
+    static String createResponseForEmptyMessage() { return "the message was empty";}
 ```
+
 
 
