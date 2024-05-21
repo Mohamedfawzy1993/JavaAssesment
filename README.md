@@ -41,6 +41,13 @@ not mentioned clearly what meant by improve, but I always prefer using streams f
     }
     static String createResponseForEmptyMessage() { return "the message was empty";}
 ```
+7- We have the following Country record. Let’s write a code snippet to fetch and update this record from this endpoint - https://get.geojs.io/v1/ip/country.json
+public record Country(String name, String country, String ip) { }
 
 
+Answer: https://github.com/Mohamedfawzy1993/JavaAssesment/tree/main/src/main/java/com/java/assesement/country
+
+8- We have this string representation of an object,
+
+Answer : https://github.com/Mohamedfawzy1993/JavaAssesment/tree/main/src/main/java/com/java/assesement/stringparse
 
